@@ -1,0 +1,47 @@
+
+Napisz prosty system do tworzenia ankiet (chodzi tylko o back-end – nie pisz widoków). System ma być napisany w pełni obiektowo według poniższych założeń.
+
+Ankieta:
+
+    Ma mieć własną nazwę, unikatowy link.
+    Ma implementować następujące metody:
+
+    zwracającą listę pytań dla danej ankiety,
+    zwracanie nazwy,
+    zmiana nazwy,
+    zapisanie zmian do bazy danych.
+
+    Ma implementować następujące statyczne metody:
+
+    stworzenie nowej ankiety,
+    wczytanie ankiety o podanym id z bazy danych,
+    usunięcie ankiety o podanym id z bazy danych.
+
+Pytanie:
+
+    Ma mieć tekst pytania.
+    Ma implementować metody:
+
+    zwracającą wszystkie udzielone odpowiedzi na to pytanie,
+    zmieniające tekst pytania, zwracające tekst pytania,
+    zapamiętujące pytanie do bazy danych.
+
+    Ma implementować statyczne metody:
+
+    stworzenie nowego pytania (potrzebuje podania id ankiety),
+    wczytanie pytania o podanym id z bazy danych,
+    usunięcie pytania o podanym id z bazy danych.
+
+Odpowiedź:
+
+    Ma mieć tekst odpowiedzi.
+    Ma implementować metody:
+        zmieniające tekst odpowiedzi,
+        zwracające tekst odpowiedzi,
+        zapamiętujące odpowiedź do bazy danych.
+    Ma implementować statyczne metody:
+        stworzenie nowej odpowiedzi (potrzebuje podania id pytania),
+        wczytanie odpowiedzi o podanym id z bazy danych,
+        usunięcie odpowiedzi o podanym id z bazy danych.
+
+Testy do zadania mają być pisane z użyciem ładowania odpowiednych fikstur do baz danych. mają być utworzone cztery grupy testowe, po jednej na każdą klasę i jedna testująca wszystko.
