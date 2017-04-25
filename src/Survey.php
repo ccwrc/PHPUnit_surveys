@@ -1,6 +1,5 @@
 <?php
 /* Ankieta:
-
     1.Ma mieć własną nazwę, unikatowy link.
     2.Ma implementować następujące metody:
 
