@@ -16,6 +16,7 @@
 class Question {
     private $questionText;
     private $questionId;
+    private $questionSurveyId;
     
 }
 
