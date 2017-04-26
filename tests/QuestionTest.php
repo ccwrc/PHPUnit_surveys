@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-class AnswerTest extends PHPUnit_Extensions_Database_TestCase {
+class QuestionTest extends PHPUnit_Extensions_Database_TestCase {
 
     protected static $myConn;
 
@@ -12,7 +12,7 @@ class AnswerTest extends PHPUnit_Extensions_Database_TestCase {
     }
 
     public function getDataSet() {
-        return $this->createFlatXmlDataSet(__DIR__ . '/../datasets/answer.xml');
+        return $this->createFlatXmlDataSet(__DIR__ . '/../datasets/question.xml');
     }
 
     public static function setUpBeforeClass() {

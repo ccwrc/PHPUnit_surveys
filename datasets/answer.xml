@@ -10,7 +10,7 @@
     <answer 
         answer_id="2" 
         answer_text="answer text 2"
-        answer_question_id="3"  />
+        answer_question_id="1"  />
     
     <answer 
         answer_id="3" 
