@@ -19,5 +19,39 @@ class Survey {
     private $surveyLink;
     private $surveyId;
     
+    public function __construct() {
+        $this->surveyId = -1;
+        $this->surveyLink = "";
+        $this->surveyName = "";
+    }
+    
+    public function getQuestionsForSurvey(mysqli $conn) {
+        //
+    }
+    
+    public function getSurveyName() {
+        return $this->surveyName;
+    }
+    
+    public function changeSurveyName($newName) {
+        //
+    }
+    
+    public function saveToDB() {
+        //
+    }
+    
+    public static function createSurvey($surveyLink, $surveyName) {
+        //
+    }
+    
+    public static function loadSurveyById($surveyId) {
+        //
+    }
+    
+    public static function deleteSurveyById($surveyId) {
+        //
+    }
+    
 }
 
