@@ -12,8 +12,14 @@
         usunięcie odpowiedzi o podanym id z bazy danych.  */
 
 class Answer {
+    static private $conn;
+
     private $answerId;
     private $answerText;
     private $answerQuestionId;
+    
+    public static function setConnection($newConn){
+        self::$conn = $newConn;
+    }
     
 }

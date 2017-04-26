@@ -15,9 +15,15 @@
     usunięcie ankiety o podanym id z bazy danych. */
 
 class Survey {
+    static private $conn;    
+    
     private $surveyName;
     private $surveyLink;
     private $surveyId;
+    
+    public static function setConnection($newConn){
+        self::$conn = $newConn;
+    }
     
     public function __construct() {
         $this->surveyId = -1;

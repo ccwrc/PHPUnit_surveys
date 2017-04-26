@@ -14,9 +14,15 @@
     usunięcie pytania o podanym id z bazy danych.   */
 
 class Question {
+    static private $conn;
+    
     private $questionText;
     private $questionId;
     private $questionSurveyId;
+    
+    public static function setConnection($newConn){
+        self::$conn = $newConn;
+    }
     
 }
 
