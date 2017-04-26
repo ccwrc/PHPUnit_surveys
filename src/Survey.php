@@ -31,7 +31,7 @@ class Survey {
         $this->surveyName = "";
     }
     
-    public function getQuestionsForSurvey(mysqli $conn) {
+    public function getQuestionsForSurvey() {
         //
     }
     
