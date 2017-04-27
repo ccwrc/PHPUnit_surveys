@@ -32,7 +32,14 @@ class Survey {
     }
     
     public function getQuestionsForSurvey() {
-        //
+        $sql = "SELECT * FROM survey LEFT JOIN question ON survey_id=question_survey_id "
+                . "WHERE survey_id=$this->surveyId";
+        $result = self::$conn->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
     
     public function getSurveyName() {
@@ -60,4 +67,5 @@ class Survey {
     }
     
 }
+
 

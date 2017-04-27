@@ -23,8 +23,9 @@ class SurveyTest extends PHPUnit_Extensions_Database_TestCase {
     
     // i testy
     
-    public function testTrue() {
-        $this->assertTrue(true);
+    public function testIsNewSurveyIsObject() {
+        $survey = new Survey();
+        $this->assertInstanceOf('Survey', $survey);
     }
 
 }

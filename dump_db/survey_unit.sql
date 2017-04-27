@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 26, 2017 at 03:30 PM
+-- Generation Time: Apr 27, 2017 at 02:03 PM
 -- Server version: 5.7.17-0ubuntu0.16.04.2
 -- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
@@ -32,6 +32,15 @@ CREATE TABLE `answer` (
   `answer_question_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `answer`
+--
+
+INSERT INTO `answer` (`answer_id`, `answer_text`, `answer_question_id`) VALUES
+(1, 'answer text 1', 1),
+(2, 'answer text 2', 1),
+(3, 'answer text 3', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -44,6 +53,15 @@ CREATE TABLE `question` (
   `question_survey_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `question`
+--
+
+INSERT INTO `question` (`question_id`, `question_text`, `question_survey_id`) VALUES
+(1, 'question text 1', 1),
+(2, 'question text 2', 1),
+(3, 'question text 3', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -55,6 +73,15 @@ CREATE TABLE `survey` (
   `survey_name` varchar(255) DEFAULT NULL,
   `survey_link` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `survey`
+--
+
+INSERT INTO `survey` (`survey_id`, `survey_name`, `survey_link`) VALUES
+(1, 'survey1', 'link survey1'),
+(2, 'survey2', 'link survey2'),
+(3, 'survey3', 'link survey3');
 
 --
 -- Indexes for dumped tables
@@ -89,17 +116,17 @@ ALTER TABLE `survey`
 -- AUTO_INCREMENT for table `answer`
 --
 ALTER TABLE `answer`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `survey`
 --
 ALTER TABLE `survey`
-  MODIFY `survey_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `survey_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
