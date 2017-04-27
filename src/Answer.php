@@ -11,6 +11,8 @@
         wczytanie odpowiedzi o podanym id z bazy danych,
         usunięcie odpowiedzi o podanym id z bazy danych.  */
 
+require_once 'connectToDB.php';
+
 class Answer {
     static private $conn;
 

@@ -13,6 +13,8 @@
     wczytanie pytania o podanym id z bazy danych,
     usunięcie pytania o podanym id z bazy danych.   */
 
+require_once 'connectToDB.php';
+
 class Question {
     static private $conn;
     
