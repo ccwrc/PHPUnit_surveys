@@ -35,28 +35,13 @@ class Survey {
     }
 
     public function getQuestionsForSurvey() {
-        $sql = "SELECT * FROM question LEFT JOIN survey ON survey_id=question_survey_id "
-                . "WHERE survey_id=$this->surveyId";
-        $result = self::$conn->query($sql);
-        if ($result->num_rows > 0) {
-            $ret = [];
-            foreach ($result as $row) {
-                $loadedQuestion = new Question();
-                $loadedQuestion->questionId = $row['question_id'];
-                $loadedQuestion->questionText = $row['question_text'];
-                $loadedQuestion->questionSurveyId = $row['question_survey_id'];
-                $ret[] = $loadedQuestion;
-            }
-            return $ret;
-        } else {
-            return false;
-        }
+        return Question::getQuestionsForSurvey($this->surveyId);
     }
 
     public function getSurveyName() {
         return $this->surveyName;
     }
-    
+
     public function getSurveyId() {
         return $this->surveyId;
     }
@@ -68,14 +53,14 @@ class Survey {
     public function saveToDB() {
         if ($this->surveyId == -1) {
             $sql = "INSERT INTO survey (survey_link, survey_name) VALUES "
-                    . "($this->surveyLink, $this->surveyName)";
+                    . "('$this->surveyLink', '$this->surveyName')";
             $result = self::$conn->query($sql);
             if ($result) {
                 $this->surveyId = self::$conn->insert_id;
                 return true;
             }
         } else {
-            $sql = "UPDATE survey SET survey_link=$this->surveyLink, survey_name=$this->surveyName "
+            $sql = "UPDATE survey SET survey_link='$this->surveyLink', survey_name='$this->surveyName' "
                     . "WHERE survey_id=$this->surveyId";
             $result = self::$conn->query($sql);
             if ($result) {
@@ -88,7 +73,7 @@ class Survey {
 
     public static function createSurvey($surveyLink, $surveyName) {
         $sql = "INSERT INTO survey (survey_link, survey_name) VALUES "
-                . "($surveyLink, $surveyName)";
+                . "('$surveyLink', '$surveyName')";
         $result = self::$conn->query($sql);
         if ($result) {
             $survey = new Survey();
@@ -105,15 +90,13 @@ class Survey {
         $sql = "SELECT * FROM survey WHERE survey_id=$surveyId";
         $result = self::$conn->query($sql);
         if ($result->num_rows == 1) {
-            $ret = [];
             foreach ($result as $row) {
                 $loadedSurvey = new Survey();
                 $loadedSurvey->surveyId = $row['survey_id'];
                 $loadedSurvey->surveyLink = $row['survey_link'];
                 $loadedSurvey->surveyName = $row['survey_name'];
-                $ret[] = $loadedSurvey;
             }
-            return $ret;
+            return $loadedSurvey;
         } else {
             return false;
         }
