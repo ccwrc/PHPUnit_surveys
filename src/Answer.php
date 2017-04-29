@@ -24,4 +24,29 @@ class Answer {
         self::$conn = $newConn;
     }
     
+    public function __construct() {
+        $this->answerId = -1;
+        $this->answerText = "";
+        $this->answerQuestionId = "";
+    }
+
+    public static function getAnswersByQuestionId($questionId) {
+        $sql = "SELECT * FROM answer LEFT JOIN question ON question_id=answer_question_id "
+                . "WHERE answer_id=$questionId";
+        $result = self::$conn->query($sql);
+        if ($result->num_rows > 0) {
+            $ret = [];
+            foreach ($result as $row) {
+                $loadedAnswer = new Answer();
+                $loadedAnswer->answerId = $row['answer_id'];
+                $loadedAnswer->answerText = $row['answer_text'];
+                $loadedAnswer->answerQuestionId = $row['answer_question_id'];
+                $ret[] = $loadedAnswer;
+            }
+            return $ret;
+        } else {
+            return false;
+        }
+    }
+
 }
