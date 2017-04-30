@@ -16,13 +16,13 @@ class MainTest extends PHPUnit_Extensions_Database_TestCase {
 //        $dataSetQuestion = $this->createFlatXmlDataSet(__DIR__ . '/../datasets/question.xml');
 //        $dataSetAnswer = $this->createFlatXmlDataSet(__DIR__ . '/../datasets/answer.xml');
 //        $dataSetSurvey = $this->createFlatXmlDataSet(__DIR__ . '/../datasets/survey.xml');
-//        
+//
 //        $compositeDataSet = new PHPUnit_Extensions_Database_DataSet_CompositeDataSet();
 //        $compositeDataSet->addDataSet($dataSetQuestion);
 //        $compositeDataSet->addDataSet($dataSetAnswer);
 //        $compositeDataSet->addDataSet($dataSetSurvey);
-//        
-//        return $compositeDataSet;     
+//
+//        return $compositeDataSet;
     }
 
     public static function setUpBeforeClass() {
@@ -30,15 +30,11 @@ class MainTest extends PHPUnit_Extensions_Database_TestCase {
                 $GLOBALS['DB_HOST'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASSWD'], $GLOBALS['DB_NAME']
         );
     }
-    
+
     // testy wlasciwe
-    
+
 //    public function testTrue() {
 //        $this->assertTrue(true);
 //    }
-    
-
-    
-    
 
 }
