@@ -63,7 +63,7 @@ class Question {
                 return true;
             }
         } else {
-            $sql = "UPDATE survey SET question_text='$this->questionText', "
+            $sql = "UPDATE question SET question_text='$this->questionText', "
                     . "question_survey_id=$this->questionSurveyId WHERE "
                     . "question_id=$this->questionId";
             $result = self::$conn->query($sql);
@@ -76,12 +76,8 @@ class Question {
     }
 
     public static function createQuestion($surveyId, $questionText) {
-        $sql = "INSERT INTO question (question_survey_id, question_text) VALUES "
-                . "($surveyId, '$questionText')";
-        $result = self::$conn->query($sql);
-        if ($result) {
+        if (is_int($surveyId) && $questionText != "") {
             $question = new Question();
-            $question->questionId = self::$conn->insert_id;
             $question->questionSurveyId = $surveyId;
             $question->questionText = $questionText;
             return $question;
