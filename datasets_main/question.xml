@@ -16,6 +16,11 @@
         question_id="3" 
         question_text="question text 3"
         question_survey_id="2"  />
+    
+    <question 
+        question_id="4" 
+        question_text="question text 4"
+        question_survey_id="2"  />
 
 </dataset>
 

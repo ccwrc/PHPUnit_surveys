@@ -3,7 +3,6 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 class QuestionTest extends PHPUnit_Extensions_Database_TestCase {
-
     protected static $myConn;
     protected static $emptyQuestion;
 
