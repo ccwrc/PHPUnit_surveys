@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+    
+    <answer 
+        answer_id="1" 
+        answer_text="answer text 1"
+        answer_question_id="1"  />
+    
+    <answer 
+        answer_id="2" 
+        answer_text="answer text 2"
+        answer_question_id="1"  />
+    
+    <answer 
+        answer_id="3" 
+        answer_text="answer text 3"
+        answer_question_id="2"  />
+
+</dataset>
+
+<!-- answer_id 	answer_text answer_question_id  -->
