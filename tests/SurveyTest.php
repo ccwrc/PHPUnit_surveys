@@ -7,6 +7,7 @@ class SurveyTest extends PHPUnit_Extensions_Database_TestCase {
 
     public function getConnection() {
         $conn = new PDO($GLOBALS['DB_DSN'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASSWD']);
+        $conn->query("SET GLOBAL FOREIGN_KEY_CHECKS=0");
         return new PHPUnit_Extensions_Database_DB_DefaultDatabaseConnection($conn, $GLOBALS['DB_NAME']);
     }
 
